@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$GIGA Coin | The Next Big Meme</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Vlastní styly -->
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(45deg, #1a1a1a, #000000);
+        }
+        .btn-buy {
+            background-color: #00ff88;
+            color: #000;
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 15px 40px;
+            border-radius: 50px;
+            transition: transform 0.2s;
+        }
+        .btn-buy:hover {
+            transform: scale(1.05);
+            background-color: #00cc6a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigace -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent pt-4">
+        <div class="container">
+            <a class="navbar-brand fs-2 fw-bold text-success" href="#">$GIGA</a>
+            <div class="d-flex">
+                <a href="#" class="btn btn-outline-light me-2">Twitter</a>
+                <a href="#" class="btn btn-outline-light">Telegram</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hlavní sekce (Hero) -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-1 fw-bold mb-4 text-uppercase">The Ultimate <span class="text-success">Meme</span> Coin</h1>
+            <p class="lead mb-5 fs-3 text-secondary">Zero utility. 100% hype. Join the absolute madness.</p>
+            
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-buy btn-lg px-5 gap-3">
+                    BUY $GIGA NOW
+                </button>
+            </div>
+            
+            <div class="mt-5">
+                <p class="text-muted small mb-2">Contract Address:</p>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <code id="contractAddress" class="bg-dark p-2 rounded text-success fs-5">0x000000...GIGA...000000</code>
+                    <button onclick="copyContract()" class="btn btn-outline-success btn-sm">Copy</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Sekce -->
+    <section class="container py-5 mt-5 border-top border-secondary">
+        <h2 class="text-center display-4 fw-bold mb-5">Tokenomics</h2>
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="p-4 bg-dark rounded-4 border border-success h-100">
+                    <h3 class="text-success fw-bold display-5">0%</h3>
+                    <p class="fs-5 mb-0 text-secondary">Buy/Sell Tax</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-dark rounded-4 border border-success h-100">
+                    <h3 class="text-success fw-bold display-5">100%</h3>
+                    <p class="fs-5 mb-0 text-secondary">Liquidity Burned</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-dark rounded-4 border border-success h-100">
+                    <h3 class="text-success fw-bold display-5">1B</h3>
+                    <p class="fs-5 mb-0 text-secondary">Total Supply</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS (pro případné interaktivní komponenty) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JS pro kopírování adresy -->
+    <script>
+        function copyContract() {
+            // Najde element s adresou a získá jeho text
+            const contractText = document.getElementById("contractAddress").innerText;
+            
+            // Zkopíruje text do schránky uživatele
+            navigator.clipboard.writeText(contractText).then(() => {
+                alert("Contract copied: " + contractText);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
